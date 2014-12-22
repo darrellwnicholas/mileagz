@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6AB8581A479C1600B4FF1E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6AB8571A479C1600B4FF1E /* Realm.framework */; };
+		5B6AB85A1A479C2D00B4FF1E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6AB8591A479C2D00B4FF1E /* libc++.dylib */; };
+		5B6AB85E1A479C8800B4FF1E /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AB85D1A479C8800B4FF1E /* RLMSupport.swift */; };
 		5B809CD219F4725900EDD86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B809CD119F4725900EDD86F /* AppDelegate.swift */; };
 		5B809CD519F4725A00EDD86F /* Mileagz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B809CD319F4725A00EDD86F /* Mileagz.xcdatamodeld */; };
 		5B809CD719F4725A00EDD86F /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B809CD619F4725A00EDD86F /* MasterViewController.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B6AB8571A479C1600B4FF1E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		5B6AB8591A479C2D00B4FF1E /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		5B6AB85D1A479C8800B4FF1E /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		5B809CCC19F4725900EDD86F /* Mileagz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mileagz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B809CD019F4725900EDD86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B809CD119F4725900EDD86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6AB85A1A479C2D00B4FF1E /* libc++.dylib in Frameworks */,
+				5B6AB8581A479C1600B4FF1E /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +68,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B6AB85B1A479C4000B4FF1E /* Realm Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AB85D1A479C8800B4FF1E /* RLMSupport.swift */,
+				5B6AB8591A479C2D00B4FF1E /* libc++.dylib */,
+				5B6AB8571A479C1600B4FF1E /* Realm.framework */,
+			);
+			name = "Realm Frameworks";
+			sourceTree = "<group>";
+		};
+		5B6AB85C1A479C6C00B4FF1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5B809CC319F4725900EDD86F = {
 			isa = PBXGroup;
 			children = (
+				5B6AB85C1A479C6C00B4FF1E /* Model */,
+				5B6AB85B1A479C4000B4FF1E /* Realm Frameworks */,
 				5B809CCE19F4725900EDD86F /* Mileagz */,
 				5B809CE919F4725A00EDD86F /* MileagzTests */,
 				5B809CCD19F4725900EDD86F /* Products */,
@@ -221,6 +248,7 @@
 			files = (
 				5B809CD219F4725900EDD86F /* AppDelegate.swift in Sources */,
 				5B809CD519F4725A00EDD86F /* Mileagz.xcdatamodeld in Sources */,
+				5B6AB85E1A479C8800B4FF1E /* RLMSupport.swift in Sources */,
 				5B809CD719F4725A00EDD86F /* MasterViewController.swift in Sources */,
 				5B809CD919F4725A00EDD86F /* DetailViewController.swift in Sources */,
 			);
@@ -347,6 +375,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mileagz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,6 +392,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mileagz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -79,6 +79,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       textField.keyboardType = UIKeyboardType.NumberPad
       }
     
+    
     alert.addAction(saveAction)
     alert.addAction(cancelAction)
     
@@ -150,7 +151,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     let myDate: NSDate = object.valueForKey("date") as NSDate
     
     let detailText = dateFormatter.stringFromDate(myDate)
-    cell.textLabel.text = object.valueForKey("mileage")!.description
+    cell.textLabel?.text = object.valueForKey("mileage")!.description
     cell.detailTextLabel?.text = detailText
   }
   
