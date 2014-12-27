@@ -15,6 +15,7 @@
 		5B809CDE19F4725A00EDD86F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B809CDD19F4725A00EDD86F /* Images.xcassets */; };
 		5B809CE119F4725A00EDD86F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B809CDF19F4725A00EDD86F /* LaunchScreen.xib */; };
 		5B809CED19F4725A00EDD86F /* MileagzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B809CEC19F4725A00EDD86F /* MileagzTests.swift */; };
+		5BFD8F881A4F188500DA6755 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD8F871A4F188500DA6755 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5B809CE619F4725A00EDD86F /* MileagzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileagzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B809CEB19F4725A00EDD86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B809CEC19F4725A00EDD86F /* MileagzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileagzTests.swift; sourceTree = "<group>"; };
+		5BFD8F871A4F188500DA6755 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				5B809CD119F4725900EDD86F /* AppDelegate.swift */,
+				5BFD8F871A4F188500DA6755 /* CoreDataStack.swift */,
 				5B809CD619F4725A00EDD86F /* MasterViewController.swift */,
 				5B809CD819F4725A00EDD86F /* DetailViewController.swift */,
 				5B809CDA19F4725A00EDD86F /* Main.storyboard */,
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFD8F881A4F188500DA6755 /* CoreDataStack.swift in Sources */,
 				5B809CD219F4725900EDD86F /* AppDelegate.swift in Sources */,
 				5B809CD519F4725A00EDD86F /* Mileagz.xcdatamodeld in Sources */,
 				5B809CD719F4725A00EDD86F /* MasterViewController.swift in Sources */,

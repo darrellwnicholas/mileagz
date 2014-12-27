@@ -11,15 +11,12 @@ import CoreData
 
 //TODO Notes:
 
-/*
-Make the DetailViewController display the mileage, along with the fuel card PIN
-number in a way that is easy on my when fueling the van up.
-*/
+
 
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+  var coreDataStack: CoreDataStack!
   
-  var managedObjectContext: NSManagedObjectContext? = nil
   
   
   override func awakeFromNib() {
@@ -57,6 +54,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       
       newManagedObject.setValue(NSDate(), forKey: "date")
       newManagedObject.setValue(miles, forKey: "mileage")
+        newManagedObject.setValue("Gas", forKey: "type")
       
       // Save the context.
       var error: NSError? = nil
@@ -148,9 +146,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
     let myDate: NSDate = object.valueForKey("date") as NSDate
+    let first = object.valueForKey("mileage")!.description
+    let second = object.valueForKey("type")!.description
     
     let detailText = dateFormatter.stringFromDate(myDate)
-    cell.textLabel.text = object.valueForKey("mileage")!.description
+    cell.textLabel?.text = "\(first) -- \(second)"
     cell.detailTextLabel?.text = detailText
   }
   
@@ -163,7 +163,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       
       let fetchRequest = NSFetchRequest()
       // Edit the entity name as appropriate.
-      let entity = NSEntityDescription.entityForName("Entry", inManagedObjectContext: self.managedObjectContext!)
+      let entity = NSEntityDescription.entityForName("Entry", inManagedObjectContext: coreDataStack.context)
       fetchRequest.entity = entity
       
       // Set the batch size to a suitable number.
@@ -177,7 +177,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       
       // Edit the section name key path and cache name if appropriate.
       // nil for section name key path means "no sections".
-      let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
+      let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.context, sectionNameKeyPath: nil, cacheName: "Master")
       aFetchedResultsController.delegate = self
       _fetchedResultsController = aFetchedResultsController
       
