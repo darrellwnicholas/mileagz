@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
   
   @IBOutlet weak var milesLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
-  let PIN = "264520"
+  let PIN = "0000"
   
   
   var detailItem: AnyObject? {
